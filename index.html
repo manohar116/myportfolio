@@ -1,237 +1,240 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    .top {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url("beautiful-shot-snowy-mountain-sunset.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      color: white;
+    }
+
+    .top h1 {
+      font-size: 4.5rem;
+    }
+
+    .top h2 {
+      font-size: 2rem;
+    }
+
+    .mid {
+      min-height: 100vh;
+      background-color: aliceblue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .profile img {
+      height: 200px;
+      border: 2px solid blue;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .profile h2 {
+      color: blue;
+      margin-bottom: 10px;
+    }
+
+    .profile p {
+      width: 80%;
+      max-width: 500px;
+      font-size: 1.1rem;
+    }
+
+    .bottom {
+      min-height: 100vh;
+      background-color: beige;
+      font-style: italic;
+      padding-top: 50px;
+      text-align: center;
+    }
+
+    .bottom h2 {
+      color: blue;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .skills .card {
+      background-color: whitesmoke;
+      padding: 20px;
+      border: 1px solid blue;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .skills .card:hover {
+      transform: scale(1.05);
+      background-color: lightblue;
+      cursor: pointer;
+    }
+
+    .contact {
+      min-height: 50vh;
+      background-color: bisque;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .contact h2 {
+      color: blueviolet;
+      font-size: 2.5rem;
+    }
+
+    .contact h3 {
+      color: blueviolet;
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+
+    .contact p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    .contact button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: greenyellow;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      min-height: 40vh;
+      background-color: aliceblue;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 30px;
+    }
+
+    .bottom-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-link {
+      text-decoration: none;
+      color: blue;
+      font-weight: bold;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: gray;
+    }
+
+    @media (max-width: 500px) {
+      .top h1 {
+        font-size: 2.8rem;
+      }
+
+      .top h2 {
+        font-size: 1.5rem;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .profile p {
+        width: 90%;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    html{
-        scroll-behavior: smooth;
-    }
-    .top{
-
-        
-        display: block;
-        text-align: center;  
-        height: 100vh;
-                background-image: url("beautiful-shot-snowy-mountain-sunset.jpg");
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-        
-    }
-    .title{
-        padding-top: 25%;
-    }
-     h1{
-        font-family: sans-serif;
-        font-size:5.7rem;
-        color: rgb(220, 238, 232);
-        position: relative;
-    }
-    
-    .top h2{
-        font-size: 2.6rem;
-        color: white;
-    }
-    .mid{
-        height: 100vh;
-        background-color: aliceblue;
-    }
-    .profile{
-    margin-left: 42%;
-    position: absolute;
-
-    }
-    .profile h2{
-        color: blue;
-        position: relative;
-        margin-left:8%;
-    }
-    img{
-        height: 200px;
-        margin-top: 100px;
-        border:2px solid blue;
-        border-radius: 50%;
-        margin-bottom: 30px;
-    }
-      p{
-            width: 31%;
-            position: relative;
-            padding-top: 20px;
-            font-size: larger;
-            font-family: sans-serif;
-            text-align:center;
-        }
-    .bottom{
-        height: 100vh;
-        background-color: beige;
-        font-style: italic;
-    }
-    .bottom h2{
-        color:blue;
-        padding-top: 50px;
-        font-size: 2.5rem;
-        font-family: sans-serif;
-        text-align: center;
-        
-    }
-.skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap: 40px;
-    max-width: 400px;
-    margin: 5% auto 0 auto;
-}
-
-.skills div {
-    background-color:whitesmoke   ;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid blue;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    font-family: sans-serif;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-.contact{
-    height: 50vh;
-    background-color: bisque;
-    text-align: center;
-}
-.contact h2{
-    color: blueviolet;
-    padding-top: 6%;
-    font-size: 2.5rem;
-}
-.contact h3{
-    padding-top: 2%;
-    color:blueviolet;
-    font-size: 1.5rem;
-}
-.contact button{
-    margin-top: 30px;
-    padding: 15px;
-    border-radius: 20px;
-    background-color: greenyellow;
-}
-footer{
-    height: 50vh;
-    background-color: aliceblue;
-}
-    @media(max-width:400px) 
-    {
-        .profile{
-            margin-left: 30%;
-
-
-        }
-        .top{
-            height:50vh;
-        }
-        .mid{
-            height:50vh;
-        }
-        .mid{
-            background-color: antiquewhite;
-        }
-        .title{
-            padding-top: 50%;
-        }
-        p{
-            width: 60%;
-        }
-        
-
-
-    }
-    .skills div:hover {
-  transform: scale(1.05);
-  transition: 0.3s ease;
-  background-color: lightblue;
-  cursor: pointer;
-}
-
-    .bottom-container{
-        display: flex;
-        flex-direction: row;
-        gap: 10%;
-        padding-top:10%;
-        justify-content:center;
-    }
-    .copyright{
-        padding: 50px
-    }
-    .footer-link{
-        text-decoration: none;
-    }
-</style>
 <body>
-    <div class="top">
-
-        <div class="title">
-        <h1>I'm Mano</h1>
-        <h2>I am a programmer</h2>
-        </div>
-
+  <div class="top">
+    <div class="title">
+      <h1>I'm Mano</h1>
+      <h2>I am a programmer</h2>
     </div>
-    <div class="mid">
-        <div class="profile">
-        <img src="mano.jpg">
-        <h2>Hello!</h2>
-        <p id="para">I'm a web developer ,crafting modern and digital experiences. I love coding at night with music..</p>
-        </div>
-    </div>
-    <div class="bottom">
-        <h2>My Skills</h2>
-        <div class="skills">
-            <div class="card">
-                <h3>Web Development</h3>
-            </div>
-            <div class="card">
-                <h3>Jva</h3>
-            </div>
-             <div class="card">
-                <h3>python</h3>
-            </div>
-             <div class="card">
-                <h3>Mysql</h3>
-            </div>
-             <div class="card">
-                <h3>Jva script</h3>
-            </div>
-            <div class="card">
-                <h3>HTML&CSS</h3>
-            </div>
-<div class="card">
-                <h3>C programming</h3>
-            </div>
-            <div class="card">
-                <h3>Data Structures</h3>
-            </div>
-
-        </div>
-    </div>
-    <div class="contact">
-        <h2>Get In Touch</h2>
-        <h3>If you love coding as much as I do</h3>
-        <center>
-        <p>Love coding? Lets talk about how awesome it is! We can code together.</p>
-        <button>Contact me</button>
-        </center>
-    </div>
-    <footer>
-<div class="bottom-container">
-    <a class="footer-link" href="https://www.linkedin.com/in/angela-yu-963a584b/">LinkedIn</a>
-    <a class="footer-link" href="https://twitter.com/yu_angela">Twitter</a>
-    <a class="footer-link" href="https://www.appbrewery.com/">Website</a>
   </div>
-  <center>
-      <p class="copyright">© Manohar @ portfolio</p>
-  </center>
-    </footer>
-</body>
 
+  <div class="mid">
+    <div class="profile">
+      <img src="mano.jpg" alt="Profile Picture">
+      <h2>Hello!</h2>
+      <p>I'm a web developer, crafting modern and digital experiences. I love coding at night with music.</p>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>Web Development</h3></div>
+      <div class="card"><h3>Java</h3></div>
+      <div class="card"><h3>Python</h3></div>
+      <div class="card"><h3>MySQL</h3></div>
+      <div class="card"><h3>JavaScript</h3></div>
+      <div class="card"><h3>HTML & CSS</h3></div>
+      <div class="card"><h3>C Programming</h3></div>
+      <div class="card"><h3>Data Structures</h3></div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <h2>Get In Touch</h2>
+    <h3>If you love coding as much as I do</h3>
+    <p>Love coding? Let's talk about how awesome it is! We can code together.</p>
+    <button>Contact me</button>
+  </div>
+
+  <footer>
+    <div class="bottom-container">
+      <a class="footer-link" href="#">LinkedIn</a>
+      <a class="footer-link" href="#">Twitter</a>
+      <a class="footer-link" href="#">Website</a>
+    </div>
+    <p class="copyright">© Manohar @ portfolio</p>
+  </footer>
+</body>
 </html>
